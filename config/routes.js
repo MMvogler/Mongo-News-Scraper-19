@@ -1,6 +1,10 @@
+var scrape = require("../scripts/scrape");
+var fetchController = require("../controllers/fetch");
+
 module.exports = function(router) {
     // Renders the home page
     router.get("/", function(req, res) {
+        fetchController.scrapeHeadlines
         res.render("home");
     });
 
