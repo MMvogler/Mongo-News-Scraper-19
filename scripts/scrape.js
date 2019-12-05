@@ -4,7 +4,6 @@ var cheerio = require("cheerio");
 
 var scrape = function () {
 
-
     // First, we grab the body of the html with axios
    return axios.get("https://www.bbc.com/news/world/us_and_canada").then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -24,7 +23,6 @@ var scrape = function () {
           .text()
           .trim();
           
-
       var link = $(this)
           .find("a")
           .attr("href");
@@ -40,13 +38,12 @@ var scrape = function () {
         articles.push(data)
       }
 
-    
-    
     });
     console.log("testing!", articles);
-    return articles
-  // Route for getting all Articles from the db
+    // return articles
+  
   })
+ 
 }
 
 module.exports = scrape;
